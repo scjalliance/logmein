@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <?xml-stylesheet href="https://secure.logmein.com/usershortcut.xsl" type="text/xsl" media="screen"?>
+<rss version="2.0">
+    <channel>
+        <title>LogMeIn.com - user@example.com</title>
+        <link>http://logmein.com/</link>
+        <image>
+            <url>https://secure.logmein.com/favicon.ico</url>
+            <title>LogMeIn</title>
+            <link>https://secure.logmein.com</link>
+        </image>
+
+        <description>LogMeIn Computers for user@example.com</description>
+        <language>en-us</language>
+        <pubDate><![CDATA[PubDate we don't care about.]]></pubDate>
+        <lastBuildDate><![CDATA[Sun, 30 Aug 2015 20:44:45 UTC]]></lastBuildDate>
+
+
+    <item>
+    <title><![CDATA[Title we don't care about.]]></title>
+    <description><![CDATA[Description we don't care about.]]></description>
+    <link><![CDATA[Link we don't care about.]]></link>
+    <pubDate><![CDATA[PubDate we don't care about.]]></pubDate>
+    <guid><![CDATA[GUID we don't care about.]]></guid>
+
+
+		<lmihostinfo>
+			<description><![CDATA[b3f2-conf3.nyc.example.com]]></description>
+			<status><![CDATA[4]]></status>
+			<link><![CDATA[https://secure.logmein.com/mycomputers_connectrss.asp?key=SECRETKEY&hostid=1234567890]]></link>
+			<ip><![CDATA[10.55.55.55]]></ip>
+		</lmihostinfo>
+
+  </item>
+
+    <item>
+    <title><![CDATA[Title we don't care about.]]></title>
+    <description><![CDATA[Description we don't care about.]]></description>
+    <link><![CDATA[Link we don't care about.]]></link>
+    <pubDate><![CDATA[PubDate we don't care about.]]></pubDate>
+    <guid><![CDATA[GUID we don't care about.]]></guid>
+
+
+		<lmihostinfo>
+			<description><![CDATA[b1-rept4.lax.example.com]]></description>
+			<status><![CDATA[1]]></status>
+			<link><![CDATA[https://secure.logmein.com/mycomputers_connectrss.asp?key=SECRETKEY&hostid=1234554321]]></link>
+			<ip><![CDATA[10.22.77.99]]></ip>
+		</lmihostinfo>
+
+	</item>
+
+
+      <item>
+      <title><![CDATA[Title we don't care about.]]></title>
+      <description><![CDATA[Description we don't care about.]]></description>
+      <link><![CDATA[Link we don't care about.]]></link>
+      <pubDate><![CDATA[PubDate we don't care about.]]></pubDate>
+      <guid><![CDATA[GUID we don't care about.]]></guid>
+
+
+  		<lmihostinfo>
+  			<description><![CDATA[b9-game8.den.example.com]]></description>
+  			<status><![CDATA[0]]></status>
+  			<link><![CDATA[https://secure.logmein.com/mycomputers_connectrss.asp?key=SECRETKEY&hostid=1234512345]]></link>
+  			<ip><![CDATA[10.11.22.33]]></ip>
+  		</lmihostinfo>
+
+  	</item>
+
+
+	</channel>
+</rss>
