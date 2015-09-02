@@ -29,7 +29,11 @@ func (lmi *LMI) Interval(interval time.Duration) time.Duration {
 // Watch runs the watch loop until the stop channel is closed
 // This sends changes to Computers based on the last Fetch or last Watch loop iteration
 // Your are not obligated to Fetch before Watch.  If you only Watch, all Computers and their fields will appear as new/changed
-func (lmi *LMI) Watch(event chan<- *Computer, stop <-chan struct{}) {
+// startDelayed == no fetch until interval; !startDelayed == fetch immediately and then resume usual fetch interval
+func (lmi *LMI) Watch(event chan<- *Computer, stop <-chan struct{}, startDelayed bool) {
+	if !startDelayed {
+		lmi.tick(event)
+	}
 	if lmi.interval < MinimumInterval {
 		lmi.interval = MinimumInterval
 	}
@@ -43,10 +47,14 @@ func (lmi *LMI) Watch(event chan<- *Computer, stop <-chan struct{}) {
 			ticker.Stop()
 			ticker = time.NewTicker(lmi.interval)
 		case <-ticker.C:
-			records := lmi.fetch(lmi.rssURL(), "")
-			for _, record := range records {
-				lmi.processComputerRaw(record, event)
-			}
+			lmi.tick(event)
 		}
+	}
+}
+
+func (lmi *LMI) tick(event chan<- *Computer) {
+	records := lmi.fetch(lmi.rssURL(), "")
+	for _, record := range records {
+		lmi.processComputerRaw(record, event)
 	}
 }

@@ -37,7 +37,7 @@ func main() {
 
 	recv := make(chan *logmein.Computer)
 	stop := make(chan struct{})
-	go lmi.Watch(recv, stop)
+	go lmi.Watch(recv, stop, true)
 
 	for {
 		computer := <-recv
