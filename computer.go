@@ -87,6 +87,11 @@ const (
 	ChangedStatus
 )
 
+// Computers returns all computers
+func (lmi *LMI) Computers() map[uint64]*Computer {
+	return lmi.computers
+}
+
 // Diff returns a list of ChangeTypes based on a comparison of two computerRecords
 // a = new record, b = previous record.  if b is nil, it's a new record.  if a is nil, maybe it's a deleted record?
 func (a *computerRecord) Diff(b *computerRecord) ChangeSet {
@@ -119,6 +124,11 @@ func (a *computerRecord) Diff(b *computerRecord) ChangeSet {
 		changes |= ChangeSet(ChangedStatus)
 	}
 	return changes
+}
+
+// GetChangeSet returns the ChangeSet between the current and prev version of this Computer
+func (c *Computer) GetChangeSet() ChangeSet {
+	return c.now.Diff(c.prev)
 }
 
 // Unchanged returns if this ChangeSet indicates no changes
